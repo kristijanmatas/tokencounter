@@ -36,6 +36,9 @@ def ifSubmitted():
             
 if upload_file is not None:
         ifSubmitted()
+        #encoding = tiktoken.encoding_for_model(option)
+        #num_tokens_box = len(encoding.encode(txtBox))
+        #st.write(num_tokens_box)
 
 st.write("#")
 st.subheader("Enter text to count tokens")
@@ -43,3 +46,5 @@ txtBox = st.text_area("")
 encoding = tiktoken.encoding_for_model(option)
 num_tokens_box = len(encoding.encode(txtBox))
 st.write("Tokens: ", num_tokens_box)
+#st.write("Tokens: ", (encoding.encode(txtBox)))
+#[encoding.decode_single_token_bytes(token) for token in (encoding.encode(txtBox)) ]
